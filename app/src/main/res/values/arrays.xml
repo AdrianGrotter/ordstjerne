@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ordliste">
+        <item name="ord1">DUE</item>
+        <item name="ord2">BUE</item>
+        <item name="ord3">BIE</item>
+        <item name="ord4">BODDE</item>
+        <item name="ord5">X</item>
+    </string-array>
+    <string-array name="wordlist">
+        <item name="word1">X</item>
+        <item name="word2">X</item>
+        <item name="word3">X</item>
+        <item name="word4">X</item>
+        <item name="word5">X</item>
+    </string-array>
+</resources>

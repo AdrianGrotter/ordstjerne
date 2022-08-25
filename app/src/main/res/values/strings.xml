@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">s354378-ordstjerne</string>
+    <string name="header">Årets ordstjerne</string>
+    <string name="button1">B</string>
+    <string name="button2">D</string>
+    <string name="button3">I</string>
+    <string name="button4">E</string>
+    <string name="button5">O</string>
+    <string name="button6">U</string>
+    <string name="buttonCenter">Y</string>
+    <string name="buttonAngre">Angre</string>
+    <string name="buttonSubmit">Sjekk</string>
+    <string name="buttonHint">Hint</string>
+    <string name="displayHint">HINT HER</string>
+    <string name="output"></string>
+    <string name="score">0/4</string>
+</resources>
