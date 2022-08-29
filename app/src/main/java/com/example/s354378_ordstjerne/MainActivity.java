@@ -3,6 +3,7 @@ package com.example.s354378_ordstjerne;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,57 +46,46 @@ TextView funnedeOrd;
 
         bokstav1.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                String word = bokstaver.getText().toString();
-                bokstaver.setText(word+="B");
+                bokstaver.append("B");
                 tilbakemelding.setText("");
             }
         });
 
         bokstav2.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                String word = bokstaver.getText().toString();
-                bokstaver.setText(word+="D");
+                bokstaver.append("D");
                 tilbakemelding.setText("");
             }
         });
 
         bokstav3.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                String word = bokstaver.getText().toString();
-                bokstaver.setText(word+="I");
+                bokstaver.append("I");
                 tilbakemelding.setText("");
             }
         });
 
-        bokstav4.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                String word = bokstaver.getText().toString();
-                bokstaver.setText(word+="E");
-                tilbakemelding.setText("");
-            }
+        bokstav4.setOnClickListener(view -> {
+            String letter = "E";
+            bokstaver.append(Html.fromHtml("<font color=#ff0000>" + letter + "</font>", Html.FROM_HTML_MODE_LEGACY));
+            tilbakemelding.setText("");
         });
 
-        bokstav5.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                String word = bokstaver.getText().toString();
-                bokstaver.setText(word+="O");
-                tilbakemelding.setText("");
-            }
+        bokstav5.setOnClickListener(view -> {
+            bokstaver.append("O");
+            tilbakemelding.setText("");
         });
 
         bokstav6.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                String word = bokstaver.getText().toString();
-                bokstaver.setText(word+="U");
-
+                bokstaver.append("U");
                 tilbakemelding.setText("");
             }
         });
 
         bokstav7.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                String word = bokstaver.getText().toString();
-                bokstaver.setText(word+="Y");
+                bokstaver.append("Y");
                 tilbakemelding.setText("");
             }
         });
