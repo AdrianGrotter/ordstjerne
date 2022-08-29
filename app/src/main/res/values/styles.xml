@@ -6,4 +6,12 @@
         <item name="android:layout_height">91dp</item>
         <item name="android:layout_weight">1</item>
     </style>
+
+    <style name="DemoTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <!-- Defining that new color in ColorPrimaryDark -->
+        <item name="colorPrimaryDark">@color/colorOfStatusBar</item>
+    </style>
 </resources>

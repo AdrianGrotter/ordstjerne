@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">s354378-wordstar</string>
-    <string name="header">This years wordstar</string>
+    <string name="header">Wordstar of the year!</string>
     <string name="button1">B</string>
     <string name="button2">D</string>
     <string name="button3">I</string>
     <string name="button4">E</string>
     <string name="button5">O</string>
     <string name="button6">U</string>
-    <string name="buttonCenter">Y</string>
+    <string name="button7">Y</string>
     <string name="buttonAngre">Undo</string>
     <string name="buttonSubmit">Submit</string>
     <string name="buttonHint">Hint</string>
-    <string name="displayHint">HINT HER</string>
-    <string name="output"></string>
-    <string name="score">0/4</string>
+    <string name="displayHint">""</string>
+    <string name="output">""</string>
+    <string name="score">0/5</string>
 </resources>
