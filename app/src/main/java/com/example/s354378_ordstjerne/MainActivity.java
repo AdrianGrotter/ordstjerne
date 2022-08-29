@@ -155,11 +155,11 @@ TextView funnedeOrd;
 
         hint.setOnClickListener(view -> {
             String[] targets = getResources().getStringArray(R.array.ordliste);
-            int num = (int) (Math.random() * (targets.length-1)); //Finner tilfeldig ord
-            char[] word = targets[num].toCharArray();
-            int num2 = (int) (Math.random() * (word.length - 1)); //Trekker tilfeldig sted i ordet som skal byttes ut med *
-            word[num2] = '*';
-            word[num2+1] = '*';
+            int numRandomWord = (int) (Math.random() * (targets.length-1)); //Finner tilfeldig ord
+            char[] word = targets[numRandomWord].toCharArray();
+            int numRandomPosition = (int) (Math.random() * (word.length - 1)); //Trekker tilfeldig sted i ordet som skal byttes ut med *
+            word[numRandomPosition] = '*';
+            word[numRandomPosition+1] = '*';
             String finalHint = String.valueOf(word);
             hintUt.setText(finalHint);
         });
