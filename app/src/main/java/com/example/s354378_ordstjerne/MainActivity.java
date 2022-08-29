@@ -1,19 +1,15 @@
 package com.example.s354378_ordstjerne;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.Arrays;
-import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 TextView bokstaver;
@@ -22,7 +18,7 @@ TextView tilbakemelding;
 TextView hintUt;
 TextView funnedeOrd;
     @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
+    public void onSaveInstanceState(@NonNull Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
 
         savedInstanceState.putCharSequence("bokstaverLagret", bokstaver.getText());
