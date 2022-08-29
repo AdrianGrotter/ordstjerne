@@ -24,9 +24,7 @@ TextView funnedeOrd;
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
-        // Save UI state changes to the savedInstanceState.
-        // This bundle will be passed to onCreate if the process is
-        // killed and restarted.
+
         savedInstanceState.putCharSequence("bokstaverLagret", bokstaver.getText());
         savedInstanceState.putCharSequence("tilbakemeldingLagret", tilbakemelding.getText());
         savedInstanceState.putCharSequence("scoreLagret", score.getText());
@@ -93,6 +91,7 @@ TextView funnedeOrd;
 
         sjekk.setOnClickListener(view -> {
             String word = bokstaver.getText().toString();
+            bokstaver.setText("");
             String[] targets = getResources().getStringArray(R.array.ordliste);
             boolean riktig = false;
             boolean sjekkMidt = false;
@@ -128,7 +127,10 @@ TextView funnedeOrd;
             }
 
             //Hvis ordet er feil
-            if (!riktig) return;
+            if (!riktig){
+                bokstaver.setText("");
+                return;
+            }
 
             // Sjekker om ordet er funnet fra før
             String funnede = funnedeOrd.getText().toString();
@@ -144,13 +146,11 @@ TextView funnedeOrd;
             if(!funnede.equals("")) funnedeOrd.append(", "+word);
             else funnedeOrd.append(word);
 
-
             int oldScore = Character.getNumericValue(score.getText().toString().toCharArray()[0]);
             String newScore = (oldScore+1)+"/5";
             score.setText(newScore);
             String tilbake = "Riktig!";
             tilbakemelding.setText(tilbake);
-            bokstaver.setText("");
         });
 
         hint.setOnClickListener(view -> {
@@ -167,6 +167,7 @@ TextView funnedeOrd;
 
     @Override
     public void onClick(View v) {
+        tilbakemelding.setText("");
         if(v.getTag() == "E") bokstaver.append(Html.fromHtml("<font color=#ff0000>" + "E" + "</font>", Html.FROM_HTML_MODE_LEGACY));
         else bokstaver.append((CharSequence) v.getTag());
     }
