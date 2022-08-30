@@ -124,6 +124,8 @@ TextView funnedeOrd;
 
             //Hvis ordet er feil
             if (!riktig){
+                String tilbake = "Ordet er feil";
+                tilbakemelding.setText(tilbake);
                 bokstaver.setText("");
                 return;
             }
