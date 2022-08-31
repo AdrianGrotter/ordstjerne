@@ -3,13 +3,21 @@ package com.example.s354378_ordstjerne;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Arrays;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 TextView bokstaver;
@@ -29,8 +37,55 @@ TextView funnedeOrd;
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        Locale locale = Locale.ENGLISH;
+        Locale.setDefault(locale);
+        Configuration config = getBaseContext().getResources().getConfiguration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,
+                getBaseContext().getResources().getDisplayMetrics());
+    }
+
+    public void setLocal(String lang) {
+        Locale locale = new Locale(lang);
+        Locale.setDefault(locale);
+        Configuration configuration = new Configuration();
+        configuration.locale = locale;
+        getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
+        SharedPreferences.Editor editor = getSharedPreferences("settings", MODE_PRIVATE).edit();
+        editor.putString("My_Language", lang);
+        editor.apply();
+    }
+
+    public void getLocal() {
+        SharedPreferences sharedPreferences = getSharedPreferences("settings", Activity.MODE_PRIVATE);
+        String language = sharedPreferences.getString("My_Language", "");
+        setLocal(language);
+    }
+
+    private void showLanguageDialoge() {
+        final String[] listItems = {"English", "Norwegian"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if (i == 0) {
+                    setLocal("en");
+                    recreate();
+                } else if (i == 1) {
+                    setLocal("nb");
+                    recreate();
+                }
+                dialogInterface.dismiss();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -56,6 +111,7 @@ TextView funnedeOrd;
         Button bokstav5 = (Button)findViewById(R.id.button5);
         Button bokstav6 = (Button)findViewById(R.id.button6);
         Button bokstav7 = (Button)findViewById(R.id.button7);
+        Button btnLanguage = (Button)findViewById(R.id.language);
 
         for (Button button : Arrays.asList(bokstav1, bokstav2, bokstav3, bokstav4, bokstav5, bokstav6, bokstav7)) {
             button.setOnClickListener(this);
@@ -83,6 +139,18 @@ TextView funnedeOrd;
                 }
             }
 
+        });
+
+        getLocal();
+        setContentView(R.layout.activity_main);
+
+        btnLanguage = findViewById(R.id.language);
+
+        btnLanguage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showLanguageDialoge();
+            }
         });
 
         sjekk.setOnClickListener(view -> {
