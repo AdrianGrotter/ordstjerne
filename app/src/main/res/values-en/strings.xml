@@ -15,4 +15,5 @@
     <string name="displayHint">""</string>
     <string name="output">""</string>
     <string name="score">0/5</string>
+    <string name="buttonLanguage">Language</string>
 </resources>
