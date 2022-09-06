@@ -171,7 +171,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textViewOutput"
+        android:id="@+id/textViewLetters"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/output"
@@ -198,7 +198,7 @@
         app:layout_constraintVertical_bias="0.01999998" />
 
     <TextView
-        android:id="@+id/tilbakemelding"
+        android:id="@+id/feedback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
@@ -223,7 +223,7 @@
         app:layout_constraintVertical_bias="0.77" />
 
     <TextView
-        android:id="@+id/funnedeOrd"
+        android:id="@+id/discoveredWords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
