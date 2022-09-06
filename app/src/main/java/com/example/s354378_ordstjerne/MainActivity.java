@@ -152,8 +152,8 @@ TextView discoveredWords;
 
                 //Bygger output
                 for (int i = 0; i<currentLetters.length -1; i++){
-                    if(currentLetters[i] == 'E') letters.append(Html.fromHtml("<font color=#ff0000>" + "E" + "</font>", Html.FROM_HTML_MODE_LEGACY));
-                    else letters.append(String.valueOf(currentLetters[i]));
+                    if(currentLetters[i] == 'E') letters.append(Html.fromHtml("<font color=#ff0000>" + "E" + "</font>", Html.FROM_HTML_MODE_LEGACY)); //Brukes for å gi E rød farge
+                    else letters.append(String.valueOf(currentLetters[i])); //Alle andre bokstaver
                 }
             }
         });
@@ -189,7 +189,7 @@ TextView discoveredWords;
             }
 
             //Sjekker om ordet er riktig
-            for(String s : wordlist){ //Sjekker om ordet er riktig
+            for(String s : wordlist){
                 if (s.equals(word)){
                     riktig=true;
                     break;
@@ -228,6 +228,9 @@ TextView discoveredWords;
             feedback.setText(toReturn);
         });
 
+        //Velger et tilfeldig ord og skjuler to bokstaver fra ordet.
+        //Vil i fremtiden kun velge fra ord som ikke er funnet, og hvor
+        //mange bokstaver som skjules vil variere etter lengden på ordet
         hint.setOnClickListener(view -> {
 
             //Velger tilfeldig ord
@@ -243,17 +246,16 @@ TextView discoveredWords;
             word[randomPosition+1] = '*';
 
             //Viser hintet på skjermen
-            System.out.println("Test");
             String hintToReturn = String.valueOf(word);
             hintOut.setText(hintToReturn);
         });
     }
 
+    //Felles metode for alle knapper
     @Override
     public void onClick(View v) {
-        System.out.println("Test");
         feedback.setText("");
-        if(v.getTag() == "E") letters.append(Html.fromHtml("<font color=#ff0000>" + "E" + "</font>", Html.FROM_HTML_MODE_LEGACY));
+        if(v.getTag() == "E") letters.append(Html.fromHtml("<font color=#ff0000>" + "E" + "</font>", Html.FROM_HTML_MODE_LEGACY)); //Brukes for å gi E rød farge
         else letters.append((CharSequence) v.getTag());
     }
 }
