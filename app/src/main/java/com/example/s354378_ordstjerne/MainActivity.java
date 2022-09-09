@@ -144,18 +144,20 @@ TextView discoveredWords;
         Button checkWord = (Button)findViewById(R.id.buttonSubmit);
         Button hint = (Button)findViewById(R.id.buttonHint);
 
+
         //Fjerner bakerste bokstav om den finnes
         regret.setOnClickListener(view -> {
+
             char[] currentLetters = letters.getText().toString().toCharArray();
             if(currentLetters.length != 0){
                 letters.setText("");
 
                 //Bygger output
                 for (int i = 0; i<currentLetters.length -1; i++){
-                    if(currentLetters[i] == 'E') letters.append(Html.fromHtml("<font color=#ff0000>" + "E" + "</font>", Html.FROM_HTML_MODE_LEGACY)); //Brukes for å gi E rød farge
-                    else letters.append(String.valueOf(currentLetters[i])); //Alle andre bokstaver
+                    appendLetter(currentLetters[i]);
                 }
             }
+
         });
 
         //Sjekker om ordet er riktig, om det er langt nok, inneholder det E og er det funnet fra før?
@@ -255,7 +257,12 @@ TextView discoveredWords;
     @Override
     public void onClick(View v) {
         feedback.setText("");
-        if(v.getTag() == "E") letters.append(Html.fromHtml("<font color=#ff0000>" + "E" + "</font>", Html.FROM_HTML_MODE_LEGACY)); //Brukes for å gi E rød farge
-        else letters.append((CharSequence) v.getTag());
+        String letter = (String)v.getTag();
+        appendLetter(letter.charAt(0));
+    }
+
+    public void appendLetter(char letterToAppend){
+        if(letterToAppend == 'E') letters.append(Html.fromHtml("<font color=#ff0000>" + "E" + "</font>", Html.FROM_HTML_MODE_LEGACY)); //Brukes for å gi E rød farge
+        else letters.append(String.valueOf(letterToAppend)); //Alle andre bokstaver
     }
 }
