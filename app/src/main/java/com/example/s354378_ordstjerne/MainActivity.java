@@ -90,10 +90,10 @@ TextView discoveredWords;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Everything related to language functionality
         getLocal();
         setContentView(R.layout.activity_main);
         Button btnLanguage = (Button)findViewById(R.id.language);
-
         btnLanguage = findViewById(R.id.language);
 
         btnLanguage.setOnClickListener(new View.OnClickListener() {
