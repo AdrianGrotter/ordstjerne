@@ -165,7 +165,7 @@ TextView discoveredWords;
             String word = letters.getText().toString();
             letters.setText("");
             String[] wordlist = getResources().getStringArray(R.array.ordliste);
-            boolean riktig = false;
+            boolean correct = false;
             boolean checkRedLetter = false;
 
             //Sjekker lengden på ordet
@@ -193,13 +193,13 @@ TextView discoveredWords;
             //Sjekker om ordet er riktig
             for(String s : wordlist){
                 if (s.equals(word)){
-                    riktig=true;
+                    correct=true;
                     break;
                 }
             }
 
             //Hvis ordet er feil
-            if (!riktig){
+            if (!correct){
                 String toReturn = "Ordet er feil";
                 feedback.setText(toReturn);
                 letters.setText("");
