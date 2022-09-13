@@ -9,6 +9,21 @@
     android:background="#121212"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/language"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:background="@drawable/button_border"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/buttonLanguage"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.041" />
+
     <LinearLayout
         android:id="@+id/linearLayoutStar"
         android:layout_width="255dp"
@@ -117,15 +132,15 @@
 
     <LinearLayout
         android:id="@+id/linearLayoutButtonbar"
-        android:layout_width="108dp"
-        android:layout_height="101dp"
+        android:layout_width="104dp"
+        android:layout_height="132dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47">
+        app:layout_constraintVertical_bias="0.498">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonRegret"
@@ -154,6 +169,16 @@
             android:background="@drawable/button_border"
             android:fontFamily="sans-serif-light"
             android:text="@string/buttonSubmit"
+            android:textColor="#FFFFFF" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonShowAllWords"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_border"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/buttonShowAllHints"
             android:textColor="#FFFFFF" />
     </LinearLayout>
 
@@ -186,7 +211,7 @@
         app:layout_constraintVertical_bias="0.282" />
 
     <TextView
-        android:id="@+id/funnedeOrd"
+        android:id="@+id/discoveredWords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
@@ -200,7 +225,7 @@
         app:layout_constraintVertical_bias="0.921" />
 
     <TextView
-        android:id="@+id/textViewOutput"
+        android:id="@+id/textViewLetters"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/output"
@@ -214,17 +239,17 @@
         app:layout_constraintVertical_bias="0.79" />
 
     <TextView
-        android:id="@+id/tilbakemelding"
+        android:id="@+id/feedback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.041" />
+        app:layout_constraintVertical_bias="0.107" />
 
     <TextView
         android:id="@+id/textViewHeader"
