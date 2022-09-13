@@ -11,6 +11,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -143,6 +144,7 @@ TextView discoveredWords;
         Button regret = (Button)findViewById(R.id.buttonRegret);
         Button checkWord = (Button)findViewById(R.id.buttonSubmit);
         Button hint = (Button)findViewById(R.id.buttonHint);
+        Button showAllWords = (Button)findViewById(R.id.buttonShowAllWords);
 
 
         //Fjerner bakerste bokstav om den finnes
@@ -159,6 +161,24 @@ TextView discoveredWords;
             }
 
         });
+
+        showAllWords.setOnClickListener((view -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setTitle("Fasit");
+            builder.setMessage("Word 1 \nWord 2\nWord 3");
+
+
+            builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.dismiss();
+                }
+            });
+
+
+
+            builder.show();
+        }));
 
         //Sjekker om ordet er riktig, om det er langt nok, inneholder det E og er det funnet fra før?
         checkWord.setOnClickListener(view -> {
