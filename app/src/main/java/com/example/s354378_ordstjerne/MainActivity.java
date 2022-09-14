@@ -129,17 +129,15 @@ TextView discoveredWords;
         Button letter6 = (Button)findViewById(R.id.button6);
         Button letter7 = (Button)findViewById(R.id.button7);
 
+        int teller = 0;
+        String[] letterList = {"B", "D", "I", "E", "O", "U", "Y"};
+        /*TODO
+            Make letterlist dynamically generated from letters in strings.xml
+        */
         for (Button button : Arrays.asList(letter1, letter2, letter3, letter4, letter5, letter6, letter7)) {
             button.setOnClickListener(this);
+            button.setTag(letterList[teller++]);
         }
-
-        letter1.setTag("B");
-        letter2.setTag("D");
-        letter3.setTag("I");
-        letter4.setTag("E");
-        letter5.setTag("O");
-        letter6.setTag("U");
-        letter7.setTag("Y");
 
         Button regret = (Button)findViewById(R.id.buttonRegret);
         Button checkWord = (Button)findViewById(R.id.buttonSubmit);
@@ -162,10 +160,17 @@ TextView discoveredWords;
 
         });
 
+        //Viser alle ord som er riktig
         showAllWords.setOnClickListener((view -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
             builder.setTitle("Fasit");
-            builder.setMessage("Word 1 \nWord 2\nWord 3");
+            String toReturn = "Word 1 \nWord 2\nWord 3";
+
+            /*TODO
+                Hent alle ord fra fasit og legg dem inn toReturn
+            */
+
+            builder.setMessage(toReturn);
 
 
             builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
@@ -174,8 +179,6 @@ TextView discoveredWords;
                     dialogInterface.dismiss();
                 }
             });
-
-
 
             builder.show();
         }));
