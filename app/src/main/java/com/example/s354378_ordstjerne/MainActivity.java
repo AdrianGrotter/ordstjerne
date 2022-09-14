@@ -67,7 +67,7 @@ TextView discoveredWords;
     }
 
     private void showLanguageDialoge() {
-        final String[] listItems = {"English", "Norwegian"};
+        final String[] listItems = {"English", "Norsk"};
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
             @Override
