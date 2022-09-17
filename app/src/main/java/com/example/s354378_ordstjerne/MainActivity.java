@@ -129,11 +129,15 @@ TextView discoveredWords;
         Button letter6 = (Button)findViewById(R.id.button6);
         Button letter7 = (Button)findViewById(R.id.button7);
 
+        String[] letterList = {getResources().getString(R.string.button1),
+                getResources().getString(R.string.button2),
+                getResources().getString(R.string.button3),
+                getResources().getString(R.string.button4),
+                getResources().getString(R.string.button5),
+                getResources().getString(R.string.button6),
+                getResources().getString(R.string.button7)};
         int teller = 0;
-        String[] letterList = {"B", "D", "I", "E", "O", "U", "Y"};
-        /*TODO
-            Make letterlist dynamically generated from letters in strings.xml
-        */
+
         for (Button button : Arrays.asList(letter1, letter2, letter3, letter4, letter5, letter6, letter7)) {
             button.setOnClickListener(this);
             button.setTag(letterList[teller++]);
