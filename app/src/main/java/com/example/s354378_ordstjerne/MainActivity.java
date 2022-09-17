@@ -164,11 +164,10 @@ TextView discoveredWords;
         showAllWords.setOnClickListener((view -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
             builder.setTitle("Fasit");
-            String toReturn = "Word 1 \nWord 2\nWord 3";
 
-            /*TODO
-                Hent alle ord fra fasit og legg dem inn toReturn
-            */
+            //Henter ordliste og gjør om til String
+            String[] wordlist = getResources().getStringArray(R.array.ordliste);
+            String toReturn = Arrays.toString(wordlist);
 
             builder.setMessage(toReturn);
 
