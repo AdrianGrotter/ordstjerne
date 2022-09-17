@@ -5,13 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -69,18 +67,15 @@ TextView discoveredWords;
     private void showLanguageDialoge() {
         final String[] listItems = {"English", "Norsk"};
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                if (i == 0) {
-                    setLocal("en");
-                    recreate();
-                } else if (i == 1) {
-                    setLocal("nb");
-                    recreate();
-                }
-                dialogInterface.dismiss();
+        builder.setSingleChoiceItems(listItems, -1, (dialogInterface, i) -> {
+            if (i == 0) {
+                setLocal("en");
+                recreate();
+            } else if (i == 1) {
+                setLocal("nb");
+                recreate();
             }
+            dialogInterface.dismiss();
         });
         AlertDialog dialog = builder.create();
         dialog.show();
@@ -94,15 +89,6 @@ TextView discoveredWords;
         //Everything related to language functionality
         getLocal();
         setContentView(R.layout.activity_main);
-        Button btnLanguage = (Button)findViewById(R.id.language);
-        btnLanguage = findViewById(R.id.language);
-
-        btnLanguage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showLanguageDialoge();
-            }
-        });
         
         //henter tekstfelter fra activity_main.xml
         letters = (TextView)findViewById(R.id.textViewLetters);
@@ -147,6 +133,9 @@ TextView discoveredWords;
         Button checkWord = (Button)findViewById(R.id.buttonSubmit);
         Button hint = (Button)findViewById(R.id.buttonHint);
         Button showAllWords = (Button)findViewById(R.id.buttonShowAllWords);
+        Button btnLanguage = (Button)findViewById(R.id.language);
+
+        btnLanguage.setOnClickListener(v -> showLanguageDialoge());
 
 
         //Fjerner bakerste bokstav om den finnes
@@ -176,12 +165,7 @@ TextView discoveredWords;
             builder.setMessage(toReturn);
 
 
-            builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    dialogInterface.dismiss();
-                }
-            });
+            builder.setNegativeButton("cancel", (dialogInterface, i) -> dialogInterface.dismiss());
 
             builder.show();
         }));
