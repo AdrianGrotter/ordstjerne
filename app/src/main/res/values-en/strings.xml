@@ -14,7 +14,14 @@
     <string name="buttonHint">Hint</string>
     <string name="displayHint">""</string>
     <string name="output">""</string>
-    <string name="score">0/5</string>
+    <string name="score">0/36</string>
     <string name="buttonLanguage">Language</string>
-    <string name="buttonShowAllHints">Wordlist</string>
+    <string name="buttonShowAllHints">Solution</string>
+
+    <string name="tooShortWord">The word is too short!</string>
+    <string name="missingRedLetter">The word must include T!</string>
+    <string name="notCorrect">Not a word!</string>
+    <string name="correct">Correct!</string>
+    <string name="win">You found all words! Congratulations!</string>
+    <string name="alreadyFound">This word has already been found.</string>
 </resources>

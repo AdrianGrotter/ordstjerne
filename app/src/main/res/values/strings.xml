@@ -19,4 +19,11 @@
     <string name="displayHint">""</string>
     <string name="output">""</string>
     <string name="score">0/36</string>
+
+    <string name="tooShortWord">Ordet er for kort!</string>
+    <string name="missingRedLetter">Ordet må inneholde T!</string>
+    <string name="notCorrect">Ordet er feil!</string>
+    <string name="correct">Riktig!</string>
+    <string name="win">Du fant alle ordene! Gratulerer!</string>
+    <string name="alreadyFound">Dette ordet er allerede funnet.</string>
 </resources>

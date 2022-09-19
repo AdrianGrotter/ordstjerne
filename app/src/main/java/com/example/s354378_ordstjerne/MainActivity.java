@@ -180,7 +180,7 @@ TextView discoveredWords;
 
             //Sjekker lengden på ordet
             if(word.toCharArray().length < 3){
-                String toReturn = "Ordet er for kort";
+                String toReturn = getResources().getString(R.string.tooShortWord);
                 feedback.setText(toReturn);
                 return;
             }
@@ -195,7 +195,7 @@ TextView discoveredWords;
 
             //Gir feedback om T ikke er med
             if(!checkRedLetter){
-                String toReturn = "Ordet må inneholde "+getResources().getString(R.string.button4).charAt(0)+"!";
+                String toReturn = getResources().getString(R.string.missingRedLetter);
                 feedback.setText(toReturn);
                 return;
             }
@@ -210,7 +210,7 @@ TextView discoveredWords;
 
             //Hvis ordet er feil
             if (!correct){
-                String toReturn = "Ordet er feil";
+                String toReturn = getResources().getString(R.string.notCorrect);
                 feedback.setText(toReturn);
                 letters.setText("");
                 return;
@@ -220,7 +220,7 @@ TextView discoveredWords;
             String discovered = discoveredWords.getText().toString();
             for (String x : discovered.split(", ")){ //Sjekker om ordet er funnet fra før
                 if (x.equals(word)){
-                    String toReturn = "Denne er allerede funnet!";
+                    String toReturn = getResources().getString(R.string.alreadyFound);
                     feedback.setText(toReturn);
                     return;
                 }
@@ -237,8 +237,8 @@ TextView discoveredWords;
             score.setText(newScore);
 
             //Gir feedback
-            String toReturn = "Riktig!";
-            feedback.setText(toReturn);
+            if(oldScore == 35) feedback.setText(getResources().getString(R.string.win));
+            else getResources().getString(R.string.correct);
         });
 
         //Velger et tilfeldig ord og skjuler to bokstaver fra ordet.
