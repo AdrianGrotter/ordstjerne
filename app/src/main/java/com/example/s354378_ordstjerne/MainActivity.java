@@ -188,7 +188,7 @@ TextView discoveredWords;
 
             //Sjekker om midterste bokstaven er brukt
             for(char c : word.toCharArray()){ //Sjekker om E er med
-                if (c == 'E') {
+                if (c == 'T') {
                     checkRedLetter = true;
                     break;
                 }
@@ -273,7 +273,7 @@ TextView discoveredWords;
     }
 
     public void appendLetter(char letterToAppend){
-        if(letterToAppend == 'E') letters.append(Html.fromHtml("<font color=#ff0000>" + "E" + "</font>", Html.FROM_HTML_MODE_LEGACY)); //Brukes for å gi E rød farge
+        if(letterToAppend == 'T') letters.append(Html.fromHtml("<font color=#ff0000>" + "T" + "</font>", Html.FROM_HTML_MODE_LEGACY)); //Brukes for å gi T rød farge
         else letters.append(String.valueOf(letterToAppend)); //Alle andre bokstaver
     }
 }
