@@ -22,6 +22,7 @@ TextView score;
 TextView feedback;
 TextView hintOut;
 TextView discoveredWords;
+    boolean[] list;
 
     //Lagrer variabler når skjerm skal roteres
     @Override
@@ -33,6 +34,7 @@ TextView discoveredWords;
         savedInstanceState.putCharSequence("savedScore", score.getText());
         savedInstanceState.putCharSequence("savedHint", hintOut.getText());
         savedInstanceState.putCharSequence("discoveredWordsLagret", discoveredWords.getText());
+        savedInstanceState.putSerializable("a", list);
     }
     
     //De fire neste metodene er hentet fra nett for å midlertidig lage knappen som endrer språk
@@ -104,6 +106,10 @@ TextView discoveredWords;
             feedback.setText(savedInstanceState.getCharSequence("savedFeedback"));
             hintOut.setText(savedInstanceState.getCharSequence("savedHint"));
             discoveredWords.setText(savedInstanceState.getCharSequence("discoveredWordsLagret"));
+            list = (boolean[]) savedInstanceState.getSerializable("a");
+        }else{
+            list = new boolean[36];
+            Arrays.fill(list, Boolean.FALSE);
         }
 
         //Initialiserer knapper
@@ -136,6 +142,8 @@ TextView discoveredWords;
         Button btnLanguage = (Button)findViewById(R.id.language);
 
         btnLanguage.setOnClickListener(v -> showLanguageDialoge());
+
+        System.out.println("Rerun");
 
 
         //Fjerner bakerste bokstav om den finnes
@@ -174,7 +182,6 @@ TextView discoveredWords;
             String word = letters.getText().toString();
             letters.setText("");
             String[] wordlist = getResources().getStringArray(R.array.ordliste);
-            int wordCount = wordlist.length;
             boolean correct = false;
             boolean checkRedLetter = false;
 
@@ -204,6 +211,7 @@ TextView discoveredWords;
             for(String s : wordlist){
                 if (s.equals(word)){
                     correct=true;
+                    list[Arrays.asList(wordlist).indexOf(word)] = true;
                     break;
                 }
             }
@@ -233,7 +241,7 @@ TextView discoveredWords;
             //Oppdaterer score
             String scoreString = score.getText().toString();
             int oldScore = Integer.parseInt(scoreString.split("/")[0]);
-            String newScore = (oldScore+1)+"/"+wordCount;
+            String newScore = (oldScore+1)+"/"+wordlist.length;
             score.setText(newScore);
 
             //Gir feedback
@@ -241,17 +249,22 @@ TextView discoveredWords;
             else getResources().getString(R.string.correct);
         });
 
-        //Velger et tilfeldig ord og skjuler to bokstaver fra ordet.
-        //Vil i fremtiden kun velge fra ord som ikke er funnet, og hvor
-        //mange bokstaver som skjules vil variere etter lengden på ordet
+        //Velger et tilfeldig ord og skjuler to bokstaver fra ordet
         hint.setOnClickListener(view -> {
 
             //Velger tilfeldig ord
             String[] wordlist = getResources().getStringArray(R.array.ordliste);
-            int randomWord = (int) (Math.random() * (wordlist.length-1));
+            int randomIndex;
+            System.out.println(Arrays.toString(list));
+            while(true){
+                randomIndex = (int) (Math.random() * (wordlist.length-1));
+                if(!list[randomIndex]){
+                    break;
+                }
+            }
 
             //Trekker tilfeldig sted i ordet som skal skjules
-            char[] word = wordlist[randomWord].toCharArray();
+            char[] word = wordlist[randomIndex].toCharArray();
             int randomPosition = (int) (Math.random() * (word.length - 1));
 
             //Skjuler 2 bokstaver
