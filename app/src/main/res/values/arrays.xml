@@ -1,11 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="ordliste">
-        <item name="ord1">DUE</item>
-        <item name="ord2">BUE</item>
-        <item name="ord3">BIE</item>
-        <item name="ord4">BODDE</item>
-        <item name="ord5">DYBDE</item>
+        <item name="ord1">UTLOT</item>
+        <item name="ord2">UTLODD</item>
+        <item name="ord3">UTBUDT</item>
+        <item name="ord4">UTBUD</item>
+        <item name="ord5">UBLUTT</item>
+        <item name="ord6">TUTU</item>
+        <item name="ord7">TUTT</item>
+        <item name="ord8">TUTL</item>
+        <item name="ord9">TULL</item>
+        <item name="ord10">TUBB</item>
+        <item name="ord11">TOTT</item>
+        <item name="ord12">TOTO</item>
+        <item name="ord13">TOLLBU</item>
+        <item name="ord14">TOLLBOD</item>
+        <item name="ord15">TOLL</item>
+        <item name="ord16">TOBB</item>
+        <item name="ord17">LUTT</item>
+        <item name="ord18">LOTTO</item>
+        <item name="ord19">LOTT</item>
+        <item name="ord20">LODOTT</item>
+        <item name="ord21">GUTU</item>
+        <item name="ord22">GUTT</item>
+        <item name="ord23">GULT</item>
+        <item name="ord24">GOUT</item>
+        <item name="ord25">GOLDT</item>
+        <item name="ord26">GODT</item>
+        <item name="ord27">DULT</item>
+        <item name="ord28">DULGT</item>
+        <item name="ord29">DOTT</item>
+        <item name="ord30">BUTT</item>
+        <item name="ord31">BULT</item>
+        <item name="ord32">BUDT</item>
+        <item name="ord33">BOLT</item>
+        <item name="ord34">BOLDT</item>
+        <item name="ord35">BLOTT</item>
+        <item name="ord36">BLOT</item>
     </string-array>
     <string-array name="wordlist">
         <item name="word1">X</item>
