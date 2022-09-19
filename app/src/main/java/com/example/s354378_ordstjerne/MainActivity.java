@@ -169,7 +169,6 @@ TextView discoveredWords;
 
             builder.show();
         }));
-
         //Sjekker om ordet er riktig, om det er langt nok, inneholder det E og er det funnet fra før?
         checkWord.setOnClickListener(view -> {
             String word = letters.getText().toString();
@@ -232,7 +231,8 @@ TextView discoveredWords;
             else discoveredWords.append(word);
 
             //Oppdaterer score
-            int oldScore = Character.getNumericValue(score.getText().toString().toCharArray()[0]);
+            String scoreString = score.getText().toString();
+            int oldScore = Integer.parseInt(scoreString.split("/")[0]);
             String newScore = (oldScore+1)+"/"+wordCount;
             score.setText(newScore);
 
