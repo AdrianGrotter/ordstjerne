@@ -164,12 +164,12 @@ TextView discoveredWords;
 
             builder.setMessage(toReturn);
 
-
             builder.setNegativeButton("cancel", (dialogInterface, i) -> dialogInterface.dismiss());
 
             builder.show();
         }));
-        //Sjekker om ordet er riktig, om det er langt nok, inneholder det E og er det funnet fra før?
+
+        //Sjekker om ordet er riktig, om det er langt nok, inneholder det T og er det funnet fra før?
         checkWord.setOnClickListener(view -> {
             String word = letters.getText().toString();
             letters.setText("");
@@ -186,16 +186,16 @@ TextView discoveredWords;
             }
 
             //Sjekker om midterste bokstaven er brukt
-            for(char c : word.toCharArray()){ //Sjekker om E er med
-                if (c == 'T') {
+            for(char c : word.toCharArray()){ //Sjekker om T er med
+                if (c == getResources().getString(R.string.button4).charAt(0)) {
                     checkRedLetter = true;
                     break;
                 }
             }
 
-            //Gir feedback om E ikke er med
+            //Gir feedback om T ikke er med
             if(!checkRedLetter){
-                String toReturn = "Ordet må inneholde E!";
+                String toReturn = "Ordet må inneholde "+getResources().getString(R.string.button4).charAt(0)+"!";
                 feedback.setText(toReturn);
                 return;
             }
@@ -273,7 +273,10 @@ TextView discoveredWords;
     }
 
     public void appendLetter(char letterToAppend){
-        if(letterToAppend == 'T') letters.append(Html.fromHtml("<font color=#ff0000>" + "T" + "</font>", Html.FROM_HTML_MODE_LEGACY)); //Brukes for å gi T rød farge
+        if(letterToAppend == getResources().getString(R.string.button4).charAt(0)){
+            //Brukes for å gi T rød farge
+            letters.append(Html.fromHtml("<font color=#ff0000>" + getResources().getString(R.string.button4).charAt(0) + "</font>", Html.FROM_HTML_MODE_LEGACY));
+        }
         else letters.append(String.valueOf(letterToAppend)); //Alle andre bokstaver
     }
 }
