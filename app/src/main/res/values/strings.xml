@@ -18,5 +18,5 @@
 
     <string name="displayHint">""</string>
     <string name="output">""</string>
-    <string name="score">0/4</string>
+    <string name="score">0/36</string>
 </resources>
