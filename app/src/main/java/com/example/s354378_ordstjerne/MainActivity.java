@@ -93,11 +93,11 @@ TextView discoveredWords;
         setContentView(R.layout.activity_main);
         
         //henter tekstfelter fra activity_main.xml
-        letters = (TextView)findViewById(R.id.textViewLetters);
-        score = (TextView)findViewById(R.id.score);
-        feedback = (TextView) findViewById(R.id.feedback);
-        hintOut = (TextView)findViewById(R.id.textViewHint);
-        discoveredWords = (TextView)findViewById(R.id.discoveredWords);
+        letters = findViewById(R.id.textViewLetters);
+        score = findViewById(R.id.score);
+        feedback =  findViewById(R.id.feedback);
+        hintOut = findViewById(R.id.textViewHint);
+        discoveredWords = findViewById(R.id.discoveredWords);
         
         //Henter frem variabler om det ikke er første instansiering av appen
         if(savedInstanceState != null){
@@ -113,13 +113,13 @@ TextView discoveredWords;
         }
 
         //Initialiserer knapper
-        Button letter1 = (Button)findViewById(R.id.button1);
-        Button letter2 = (Button)findViewById(R.id.button2);
-        Button letter3 = (Button)findViewById(R.id.button3);
-        Button letter4 = (Button)findViewById(R.id.button4);
-        Button letter5 = (Button)findViewById(R.id.button5);
-        Button letter6 = (Button)findViewById(R.id.button6);
-        Button letter7 = (Button)findViewById(R.id.button7);
+        Button letter1 = findViewById(R.id.button1);
+        Button letter2 = findViewById(R.id.button2);
+        Button letter3 = findViewById(R.id.button3);
+        Button letter4 = findViewById(R.id.button4);
+        Button letter5 = findViewById(R.id.button5);
+        Button letter6 = findViewById(R.id.button6);
+        Button letter7 = findViewById(R.id.button7);
 
         String[] letterList = {getResources().getString(R.string.button1),
                 getResources().getString(R.string.button2),
@@ -135,11 +135,11 @@ TextView discoveredWords;
             button.setTag(letterList[teller++]);
         }
 
-        Button regret = (Button)findViewById(R.id.buttonRegret);
-        Button checkWord = (Button)findViewById(R.id.buttonSubmit);
-        Button hint = (Button)findViewById(R.id.buttonHint);
-        Button showAllWords = (Button)findViewById(R.id.buttonShowAllWords);
-        Button btnLanguage = (Button)findViewById(R.id.language);
+        Button regret = findViewById(R.id.buttonRegret);
+        Button checkWord = findViewById(R.id.buttonSubmit);
+        Button hint = findViewById(R.id.buttonHint);
+        Button showAllWords = findViewById(R.id.buttonShowAllWords);
+        Button btnLanguage = findViewById(R.id.language);
 
         btnLanguage.setOnClickListener(v -> showLanguageDialoge());
 
