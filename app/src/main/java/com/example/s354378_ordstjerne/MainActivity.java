@@ -143,8 +143,6 @@ TextView discoveredWords;
 
         btnLanguage.setOnClickListener(v -> showLanguageDialoge());
 
-        System.out.println("Rerun");
-
 
         //Fjerner bakerste bokstav om den finnes
         regret.setOnClickListener(view -> {
@@ -255,7 +253,6 @@ TextView discoveredWords;
             //Velger tilfeldig ord
             String[] wordlist = getResources().getStringArray(R.array.ordliste);
             int randomIndex;
-            System.out.println(Arrays.toString(list));
             while(true){
                 randomIndex = (int) (Math.random() * (wordlist.length-1));
                 if(!list[randomIndex]){
