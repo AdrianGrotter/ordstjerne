@@ -86,7 +86,7 @@ TextView discoveredWords;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Everything related to language functionality
+        //Kode relatert til språkendring
         getLocal();
         setContentView(R.layout.activity_main);
         
@@ -106,7 +106,7 @@ TextView discoveredWords;
             discoveredWords.setText(savedInstanceState.getCharSequence("discoveredWordsLagret"));
         }
 
-        //Initializing buttons
+        //Initialiserer knapper
         Button letter1 = (Button)findViewById(R.id.button1);
         Button letter2 = (Button)findViewById(R.id.button2);
         Button letter3 = (Button)findViewById(R.id.button3);
@@ -156,7 +156,7 @@ TextView discoveredWords;
         //Viser alle ord som er riktig
         showAllWords.setOnClickListener((view -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-            builder.setTitle("Fasit");
+            builder.setTitle(getResources().getString(R.string.solution));
 
             //Henter ordliste og gjør om til String
             String[] wordlist = getResources().getStringArray(R.array.ordliste);

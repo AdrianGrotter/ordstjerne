@@ -17,6 +17,7 @@
     <string name="score">0/36</string>
     <string name="buttonLanguage">Language</string>
     <string name="buttonShowAllHints">Solution</string>
+    <string name="solution">Solution</string>
 
     <string name="tooShortWord">The word is too short!</string>
     <string name="missingRedLetter">The word must include T!</string>

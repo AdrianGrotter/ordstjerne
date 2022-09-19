@@ -19,6 +19,7 @@
     <string name="displayHint">""</string>
     <string name="output">""</string>
     <string name="score">0/36</string>
+    <string name="solution">Fasit</string>
 
     <string name="tooShortWord">Ordet er for kort!</string>
     <string name="missingRedLetter">Ordet må inneholde T!</string>
