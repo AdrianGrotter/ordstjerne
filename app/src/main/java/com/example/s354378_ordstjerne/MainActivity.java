@@ -244,7 +244,7 @@ TextView discoveredWords;
 
             //Gir feedback
             if(oldScore == 35) feedback.setText(getResources().getString(R.string.win));
-            else getResources().getString(R.string.correct);
+            else feedback.setText(getResources().getString(R.string.correct));
         });
 
         //Velger et tilfeldig ord og skjuler to bokstaver fra ordet
