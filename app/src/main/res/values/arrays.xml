@@ -38,11 +38,4 @@
         <item name="ord35">BLOTT</item>
         <item name="ord36">BLOT</item>
     </string-array>
-    <string-array name="wordlist">
-        <item name="word1">X</item>
-        <item name="word2">X</item>
-        <item name="word3">X</item>
-        <item name="word4">X</item>
-        <item name="word5">X</item>
-    </string-array>
 </resources>
