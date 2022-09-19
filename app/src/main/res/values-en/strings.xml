@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">s354378-wordstar</string>
     <string name="header">Wordstar of the year!</string>
+
     <string name="button1">B</string>
     <string name="button2">D</string>
     <string name="button3">G</string>
@@ -9,15 +10,6 @@
     <string name="button5">L</string>
     <string name="button6">O</string>
     <string name="button7">U</string>
-    <string name="buttonAngre">Undo</string>
-    <string name="buttonSubmit">Submit</string>
-    <string name="buttonHint">Hint</string>
-    <string name="displayHint">""</string>
-    <string name="output">""</string>
-    <string name="score">0/36</string>
-    <string name="buttonLanguage">Language</string>
-    <string name="buttonShowAllHints">Solution</string>
-    <string name="solution">Solution</string>
 
     <string name="tooShortWord">The word is too short!</string>
     <string name="missingRedLetter">The word must include T!</string>
@@ -25,4 +17,15 @@
     <string name="correct">Correct!</string>
     <string name="win">You found all words! Congratulations!</string>
     <string name="alreadyFound">This word has already been found.</string>
+
+    <string name="buttonLanguage">Language</string>
+    <string name="buttonShowAllHints">Solution</string>
+    <string name="buttonAngre">Undo</string>
+    <string name="buttonSubmit">Submit</string>
+    <string name="buttonHint">Hint</string>
+
+    <string name="displayHint">""</string>
+    <string name="output">""</string>
+    <string name="score">0/36</string>
+    <string name="solution">Solution</string>
 </resources>
