@@ -175,6 +175,7 @@ TextView discoveredWords;
             String word = letters.getText().toString();
             letters.setText("");
             String[] wordlist = getResources().getStringArray(R.array.ordliste);
+            int wordCount = wordlist.length;
             boolean correct = false;
             boolean checkRedLetter = false;
 
@@ -232,7 +233,7 @@ TextView discoveredWords;
 
             //Oppdaterer score
             int oldScore = Character.getNumericValue(score.getText().toString().toCharArray()[0]);
-            String newScore = (oldScore+1)+"/5";
+            String newScore = (oldScore+1)+"/"+wordCount;
             score.setText(newScore);
 
             //Gir feedback
