@@ -34,7 +34,7 @@ TextView discoveredWords;
         savedInstanceState.putCharSequence("savedScore", score.getText());
         savedInstanceState.putCharSequence("savedHint", hintOut.getText());
         savedInstanceState.putCharSequence("discoveredWordsLagret", discoveredWords.getText());
-        savedInstanceState.putSerializable("a", list);
+        savedInstanceState.putSerializable("booleanList", list);
     }
     
     //De fire neste metodene er hentet fra nett for å midlertidig lage knappen som endrer språk
@@ -106,7 +106,7 @@ TextView discoveredWords;
             feedback.setText(savedInstanceState.getCharSequence("savedFeedback"));
             hintOut.setText(savedInstanceState.getCharSequence("savedHint"));
             discoveredWords.setText(savedInstanceState.getCharSequence("discoveredWordsLagret"));
-            list = (boolean[]) savedInstanceState.getSerializable("a");
+            list = (boolean[]) savedInstanceState.getSerializable("booleanList");
         }else{
             list = new boolean[36];
             Arrays.fill(list, Boolean.FALSE);
