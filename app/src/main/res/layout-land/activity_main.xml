@@ -86,8 +86,7 @@
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_margin="5dp"
-                android:background="@drawable/button_border"
-                android:backgroundTint="#800020"
+                android:background="@drawable/button_border_center"
                 android:text="@string/button4"
                 android:textColor="#FFFFFF" />
 
