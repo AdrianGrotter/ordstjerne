@@ -22,7 +22,7 @@ TextView score;
 TextView feedback;
 TextView hintOut;
 TextView discoveredWords;
-    boolean[] list;
+Boolean[] list;
 
     //Lagrer variabler når skjerm skal roteres
     @Override
@@ -95,9 +95,9 @@ TextView discoveredWords;
             feedback.setText(savedInstanceState.getCharSequence("savedFeedback"));
             hintOut.setText(savedInstanceState.getCharSequence("savedHint"));
             discoveredWords.setText(savedInstanceState.getCharSequence("discoveredWordsLagret"));
-            list = (boolean[]) savedInstanceState.getSerializable("booleanList");
+            list = (Boolean[]) savedInstanceState.getSerializable("booleanList");
         }else{
-            list = new boolean[36];
+            list = new Boolean[36];
             Arrays.fill(list, Boolean.FALSE);
         }
 
@@ -244,7 +244,7 @@ TextView discoveredWords;
             int randomIndex;
             while(true){
                 randomIndex = (int) (Math.random() * (wordlist.length-1));
-                if(!list[randomIndex]){
+                if(!list[randomIndex] || !Arrays.asList(list).contains(false)){
                     break;
                 }
             }
