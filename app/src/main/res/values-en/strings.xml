@@ -18,7 +18,7 @@
     <string name="win">You found all words! Congratulations!</string>
     <string name="alreadyFound">This word has already been found.</string>
 
-    <string name="buttonLanguage">Language</string>
+    <string name="buttonLanguage">Språk</string>
     <string name="buttonShowAllHints">Solution</string>
     <string name="buttonAngre">Undo</string>
     <string name="buttonSubmit">Submit</string>
