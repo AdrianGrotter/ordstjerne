@@ -22,7 +22,7 @@ TextView score;
 TextView feedback;
 TextView hintOut;
 TextView discoveredWords;
-Boolean[] list;
+Boolean[] list; // liste over hvilke ord som er funnet
 
     //Lagrer variabler når skjerm skal roteres
     @Override
@@ -37,7 +37,7 @@ Boolean[] list;
         savedInstanceState.putSerializable("booleanList", list);
     }
     
-    //De tre neste metodene er hentet fra nett for å midlertidig lage knappen som endrer språk
+    //De to neste metodene er hentet fra nett for å lage knappen som endrer språk
     public void setLocal(String lang) {
         Locale locale = new Locale(lang);
         Locale.setDefault(locale);
@@ -45,13 +45,13 @@ Boolean[] list;
         configuration.locale = locale;
         getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
         SharedPreferences.Editor editor = getSharedPreferences("settings", MODE_PRIVATE).edit();
-        editor.putString("My_Language", lang);
+        editor.putString("savedLanguage", lang);
         editor.apply();
     }
 
     public void getLocal() {
         SharedPreferences sharedPreferences = getSharedPreferences("settings", Activity.MODE_PRIVATE);
-        String language = sharedPreferences.getString("My_Language", "");
+        String language = sharedPreferences.getString("savedLanguage", "");
         setLocal(language);
     }
 
@@ -75,9 +75,6 @@ Boolean[] list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        //Kode relatert til språkendring
         getLocal();
         setContentView(R.layout.activity_main);
         
