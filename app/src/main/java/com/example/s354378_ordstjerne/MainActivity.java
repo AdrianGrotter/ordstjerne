@@ -37,18 +37,7 @@ TextView discoveredWords;
         savedInstanceState.putSerializable("booleanList", list);
     }
     
-    //De fire neste metodene er hentet fra nett for å midlertidig lage knappen som endrer språk
-    @Override
-    public void onResume() {
-        super.onResume();
-        Locale locale = Locale.ENGLISH;
-        Locale.setDefault(locale);
-        Configuration config = getBaseContext().getResources().getConfiguration();
-        config.locale = locale;
-        getBaseContext().getResources().updateConfiguration(config,
-                getBaseContext().getResources().getDisplayMetrics());
-    }
-
+    //De tre neste metodene er hentet fra nett for å midlertidig lage knappen som endrer språk
     public void setLocal(String lang) {
         Locale locale = new Locale(lang);
         Locale.setDefault(locale);
