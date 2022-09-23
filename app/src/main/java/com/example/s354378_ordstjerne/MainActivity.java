@@ -238,12 +238,14 @@ Boolean[] list; // liste over hvilke ord som er funnet
 
             //Velger tilfeldig ord
             String[] wordlist = getResources().getStringArray(R.array.ordliste);
-            int randomIndex;
-            while(true){
+
+            //Avslutter om alle ord er funnet
+            if(!Arrays.asList(list).contains(false)) return;
+
+            //Løkke som finner en tilfeldig plass i listen som har veriden false
+            int randomIndex = (int) (Math.random() * (wordlist.length-1));
+            while(list[randomIndex]){
                 randomIndex = (int) (Math.random() * (wordlist.length-1));
-                if(!list[randomIndex] || !Arrays.asList(list).contains(false)){
-                    break;
-                }
             }
 
             //Trekker tilfeldig sted i ordet som skal skjules
@@ -260,7 +262,7 @@ Boolean[] list; // liste over hvilke ord som er funnet
         });
     }
 
-    //Felles metode for alle knapper
+    //Felles metode for alle bokstav-knappene
     @Override
     public void onClick(View v) {
         feedback.setText("");
@@ -268,10 +270,11 @@ Boolean[] list; // liste over hvilke ord som er funnet
         appendLetter(letter.charAt(0));
     }
 
+    //Metode som legger 1 bokstav inn i textView'et som holder bokstavene
     public void appendLetter(char letterToAppend){
         if(letterToAppend == getResources().getString(R.string.button4).charAt(0)){
             //Brukes for å gi T rød farge
-            letters.append(Html.fromHtml("<font color=#ff0000>" + getResources().getString(R.string.button4).charAt(0) + "</font>", Html.FROM_HTML_MODE_LEGACY));
+            letters.append(Html.fromHtml("<font color=#D2042D>" + getResources().getString(R.string.button4).charAt(0) + "</font>", Html.FROM_HTML_MODE_LEGACY));
         }
         else letters.append(String.valueOf(letterToAppend)); //Alle andre bokstaver
     }
