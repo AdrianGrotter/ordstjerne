@@ -170,7 +170,7 @@ Boolean[] list; // liste over hvilke ord som er funnet
             boolean checkRedLetter = false;
 
             //Sjekker lengden på ordet
-            if(word.toCharArray().length < 3){
+            if(word.toCharArray().length < 4){
                 String toReturn = getResources().getString(R.string.tooShortWord);
                 feedback.setText(toReturn);
                 return;
