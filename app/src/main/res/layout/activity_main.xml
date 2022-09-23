@@ -36,7 +36,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53">
+        app:layout_constraintVertical_bias="0.62">
 
         <LinearLayout
             android:id="@+id/linearLayoutLeft"
@@ -131,7 +131,7 @@
     <LinearLayout
         android:id="@+id/linearLayoutButtonbar"
         android:layout_width="320dp"
-        android:layout_height="38dp"
+        android:layout_height="48dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -142,7 +142,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonRegret"
             android:layout_width="100dp"
-            android:layout_height="25dp"
+            android:layout_height="48dp"
             android:background="@drawable/button_border"
             android:fontFamily="sans-serif-light"
             android:text="@string/buttonAngre"
@@ -151,7 +151,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonHint"
             android:layout_width="100dp"
-            android:layout_height="25dp"
+            android:layout_height="48dp"
             android:layout_marginStart="10dp"
             android:background="@drawable/button_border"
             android:fontFamily="sans-serif-light"
@@ -161,7 +161,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonSubmit"
             android:layout_width="100dp"
-            android:layout_height="25dp"
+            android:layout_height="48dp"
             android:layout_marginStart="10dp"
             android:background="@drawable/button_border"
             android:fontFamily="sans-serif-light"
@@ -219,7 +219,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.77" />
+        app:layout_constraintVertical_bias="0.8" />
 
     <TextView
         android:id="@+id/discoveredWords"
@@ -241,7 +241,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/language"
         android:layout_width="100dp"
-        android:layout_height="25dp"
+        android:layout_height="48dp"
         android:background="@drawable/button_border"
         android:fontFamily="sans-serif-light"
         android:text="@string/buttonLanguage"
@@ -256,7 +256,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonShowAllWords"
         android:layout_width="100dp"
-        android:layout_height="25dp"
+        android:layout_height="48dp"
         android:background="@drawable/button_border"
         android:fontFamily="sans-serif-light"
         android:text="@string/buttonShowAllHints"
@@ -266,6 +266,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.94" />
+        app:layout_constraintVertical_bias="0.961" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
