@@ -130,7 +130,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayoutButtonbar"
-        android:layout_width="320dp"
+        android:layout_width="322dp"
         android:layout_height="48dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -240,7 +240,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/language"
-        android:layout_width="100dp"
+        android:layout_width="101dp"
         android:layout_height="48dp"
         android:background="@drawable/button_border"
         android:fontFamily="sans-serif-light"
@@ -266,6 +266,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.961" />
+        app:layout_constraintVertical_bias="0.976" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
