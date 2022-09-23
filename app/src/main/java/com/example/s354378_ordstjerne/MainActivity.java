@@ -93,7 +93,7 @@ Boolean[] list; // liste over hvilke ord som er funnet
             hintOut.setText(savedInstanceState.getCharSequence("savedHint"));
             discoveredWords.setText(savedInstanceState.getCharSequence("discoveredWordsLagret"));
             list = (Boolean[]) savedInstanceState.getSerializable("booleanList");
-        }else{
+        }else{ //oppretter ny liste om det er første gang appen startes
             list = new Boolean[36];
             Arrays.fill(list, Boolean.FALSE);
         }
@@ -200,7 +200,7 @@ Boolean[] list; // liste over hvilke ord som er funnet
                 }
             }
 
-            //Hvis ordet er feil
+            //Gir feedback om ordet er riktig
             if (!correct){
                 String toReturn = getResources().getString(R.string.notCorrect);
                 feedback.setText(toReturn);
