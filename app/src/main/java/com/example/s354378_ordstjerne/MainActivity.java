@@ -37,7 +37,7 @@ Boolean[] list; // liste over hvilke ord som er funnet
         savedInstanceState.putSerializable("booleanList", list);
     }
     
-    //De to neste metodene er hentet fra nett for å lage knappen som endrer språk
+    //De neste metodene er hentet fra nett for å lage knappen som endrer språk
     public void setLocal(String lang) {
         Locale locale = new Locale(lang);
         Locale.setDefault(locale);
@@ -55,6 +55,7 @@ Boolean[] list; // liste over hvilke ord som er funnet
         setLocal(language);
     }
 
+    //Pop-up boksen som brukes for å velge språk
     private void showLanguageDialoge() {
         final String[] languages = {"English", "Norsk"};
         AlertDialog.Builder alertDialogLanguage = new AlertDialog.Builder(MainActivity.this);
