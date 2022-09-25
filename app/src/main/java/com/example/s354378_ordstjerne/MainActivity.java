@@ -56,19 +56,19 @@ Boolean[] list; // liste over hvilke ord som er funnet
     }
 
     private void showLanguageDialoge() {
-        final String[] listItems = {"English", "Norsk"};
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setSingleChoiceItems(listItems, -1, (dialogInterface, i) -> {
-            if (i == 0) {
+        final String[] languages = {"English", "Norsk"};
+        AlertDialog.Builder alertDialogLanguage = new AlertDialog.Builder(MainActivity.this);
+        alertDialogLanguage.setSingleChoiceItems(languages, -1, (dialogInterface, item) -> {
+            if (item == 0) {
                 setLocal("en");
                 recreate();
-            } else if (i == 1) {
+            } else if (item == 1) {
                 setLocal("nb");
                 recreate();
             }
             dialogInterface.dismiss();
         });
-        AlertDialog dialog = builder.create();
+        AlertDialog dialog = alertDialogLanguage.create();
         dialog.show();
     }
 
@@ -93,7 +93,9 @@ Boolean[] list; // liste over hvilke ord som er funnet
             hintOut.setText(savedInstanceState.getCharSequence("savedHint"));
             discoveredWords.setText(savedInstanceState.getCharSequence("discoveredWordsLagret"));
             list = (Boolean[]) savedInstanceState.getSerializable("booleanList");
-        }else{ //oppretter ny liste om det er første gang appen startes
+        }
+        //oppretter ny liste om det er første gang appen startes
+        else{
             list = new Boolean[36];
             Arrays.fill(list, Boolean.FALSE);
         }
@@ -145,20 +147,20 @@ Boolean[] list; // liste over hvilke ord som er funnet
 
         });
 
-        //Viser alle ord som er riktig
+        //Viser fasit
         showAllWords.setOnClickListener((view -> {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-            builder.setTitle(getResources().getString(R.string.solution));
+            AlertDialog.Builder alertDialogSolution = new AlertDialog.Builder(MainActivity.this);
+            alertDialogSolution.setTitle(getResources().getString(R.string.solution));
 
-            //Henter ordliste og gjør om til String
-            String[] wordlist = getResources().getStringArray(R.array.ordliste);
-            String toReturn = Arrays.toString(wordlist);
+            //Henter fasit og gjør om til String[]
+            String[] solution = getResources().getStringArray(R.array.ordliste);
+            String toReturn = Arrays.toString(solution);
 
-            builder.setMessage(toReturn);
+            alertDialogSolution.setMessage(toReturn);
 
-            builder.setNegativeButton("cancel", (dialogInterface, i) -> dialogInterface.dismiss());
+            alertDialogSolution.setNegativeButton("cancel", (dialogInterface, i) -> dialogInterface.dismiss());
 
-            builder.show();
+            alertDialogSolution.show();
         }));
 
         //Sjekker om ordet er riktig, om det er langt nok, inneholder det T og er det funnet fra før?
@@ -242,7 +244,7 @@ Boolean[] list; // liste over hvilke ord som er funnet
             //Avslutter om alle ord er funnet
             if(!Arrays.asList(list).contains(false)) return;
 
-            //Løkke som finner en tilfeldig plass i listen som har veriden false
+            //Løkke som finner en tilfeldig plass i listen som har verdien false
             int randomIndex = (int) (Math.random() * (wordlist.length-1));
             while(list[randomIndex]){
                 randomIndex = (int) (Math.random() * (wordlist.length-1));
@@ -272,10 +274,11 @@ Boolean[] list; // liste over hvilke ord som er funnet
 
     //Metode som legger 1 bokstav inn i textView'et som holder bokstavene
     public void appendLetter(char letterToAppend){
+        //Brukes for å gi T rød farge
         if(letterToAppend == getResources().getString(R.string.button4).charAt(0)){
-            //Brukes for å gi T rød farge
             letters.append(Html.fromHtml("<font color=#D2042D>" + getResources().getString(R.string.button4).charAt(0) + "</font>", Html.FROM_HTML_MODE_LEGACY));
         }
+        //Alle andre bokstaver
         else letters.append(String.valueOf(letterToAppend)); //Alle andre bokstaver
     }
 }
